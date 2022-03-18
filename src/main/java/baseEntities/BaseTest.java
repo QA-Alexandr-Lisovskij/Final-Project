@@ -2,7 +2,6 @@ package baseEntities;
 
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.codeborne.selenide.testng.SoftAsserts;
 import core.ApiService;
 import core.DriverService;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -14,7 +13,6 @@ import utils.Randomization;
 
 import java.lang.reflect.Method;
 
-@Listeners({SoftAsserts.class})
 public class BaseTest {
 
     public User validUser;
