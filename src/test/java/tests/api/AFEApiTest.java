@@ -8,7 +8,7 @@ import static constant.EndPointsApi.*;
 import static io.restassured.RestAssured.given;
 
 public class AFEApiTest extends BaseApiTest {
-    int id = 4;
+    int id = 8;
     @Test
     public void getUserByInvalidId(){
         given()
