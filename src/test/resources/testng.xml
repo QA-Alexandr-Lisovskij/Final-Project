@@ -3,7 +3,7 @@
 <suite name="Final Suite">
     <test name="Test Basics 2">
         <classes>
-            <class name="tests.gui.PositiveTest"/>
+            <class name="tests.api.AFEApiTest"/>
 
         </classes>
     </test> <!-- Test -->

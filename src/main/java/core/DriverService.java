@@ -1,7 +1,6 @@
 package core;
 
 
-import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -12,13 +11,14 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-
 import static com.codeborne.selenide.AssertionMode.SOFT;
+import static com.codeborne.selenide.Browsers.CHROME;
 import static constant.Urls.BASE_URL;
 
 public class DriverService {
@@ -27,9 +27,8 @@ public class DriverService {
 
         // Set settings for selenide browser
         Configuration.baseUrl = BASE_URL;
-        Configuration.browser = Browsers.CHROME;
-        Configuration.browserSize = "1980x1080";
-        Configuration.headless = false;
+        Configuration.browser = CHROME;
+        Configuration.headless = true;
         Configuration.assertionMode = SOFT;
 
         

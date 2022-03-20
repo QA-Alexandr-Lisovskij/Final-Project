@@ -13,8 +13,8 @@ import utils.Randomization;
 
 import java.lang.reflect.Method;
 
+import static com.codeborne.selenide.Selenide.open;
 import static core.DriverService.maximize;
-import static core.DriverService.open;
 
 
 public class BaseTest {
