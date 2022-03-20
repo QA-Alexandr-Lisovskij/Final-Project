@@ -26,7 +26,6 @@ public class DriverService {
     public static void initDriver() {
 
         // Set settings for selenide browser
-        org.apache.log4j.BasicConfigurator.configure();
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = Browsers.CHROME;
         Configuration.browserSize = "1980x1080";

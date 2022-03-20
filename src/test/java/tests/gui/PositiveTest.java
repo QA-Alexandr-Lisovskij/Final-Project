@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import pages.*;
 
 public class PositiveTest extends BaseTest {
-    private static final Logger logger = LogManager.getLogger(PositiveTest.class);
-
 
     @Test
     public void entityAdditionTest(){
