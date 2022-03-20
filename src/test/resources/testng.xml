@@ -4,6 +4,9 @@
     <test name="Test Basics 2">
         <classes>
             <class name="tests.api.AFEApiTest"/>
+            <class name="tests.api.NFEApiTest"/>
+            <class name="tests.gui.NegativeTest"/>
+            <class name="tests.gui.PositiveTest"/>
 
         </classes>
     </test> <!-- Test -->
