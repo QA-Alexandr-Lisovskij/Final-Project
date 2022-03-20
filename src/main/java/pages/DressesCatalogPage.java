@@ -1,6 +1,5 @@
 package pages;
 
-import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import core.DriverService;
 import dbEntries.DressesTable;
@@ -125,8 +124,8 @@ public class DressesCatalogPage extends HomeBar {
         checkDressSize(itemDress.getSize());
         checkDressColor(itemDress.getColor());
         DriverService.waitForUrlContains("color");
-        itemImage.should(visible).scrollTo().hover();
-        itemMoreButton.should(visible).click();
+        itemImage.hover();
+        itemMoreButton.click();
     }
 
     public void clickForItem(){

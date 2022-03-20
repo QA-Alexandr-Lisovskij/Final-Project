@@ -31,8 +31,7 @@ public class DriverService {
         Configuration.browserSize = "1980x1080";
         Configuration.headless = false;
         Configuration.assertionMode = SOFT;
-        open("/");
-        maximize();
+
         
     }
 

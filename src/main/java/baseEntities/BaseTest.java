@@ -13,24 +13,31 @@ import utils.Randomization;
 
 import java.lang.reflect.Method;
 
+import static core.DriverService.maximize;
+import static core.DriverService.open;
+
+
 public class BaseTest {
 
     public User validUser;
     public User invalidUser;
     public ItemDress validDress;
 
-
-    @BeforeMethod
-    public void setUp(){
+    @BeforeClass
+    public void setUpSelenide(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                        .screenshots(true)
-                        .savePageSource(false));
-
+                .screenshots(true)
+                .savePageSource(false));
         DriverService.initDriver();
         ApiService.initApi();
         validUser = ApiService.getValidUser();
         invalidUser = ApiService.getInvalidUser();
         validDress = ApiService.getDress();
+    }
+    @BeforeMethod
+    public void setUp(){
+        open("/");
+        maximize();
         LoginPage loginPage = new LoginPage();
         loginPage.LoginWithUser(validUser);
     }
