@@ -7,10 +7,7 @@ import core.DriverService;
 import io.qameta.allure.selenide.AllureSelenide;
 import model.ItemDress;
 import model.User;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.Randomization;
 
@@ -26,7 +23,7 @@ public class BaseTest {
     public User invalidUser;
     public ItemDress validDress;
 
-    @BeforeSuite
+    @BeforeClass
     public void setUpConfig(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
         DriverService.initDriver();
@@ -53,6 +50,10 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
+        DriverService.close();
+    }
+    @AfterClass
+    public void driverDown(){
         DriverService.close();
     }
 
