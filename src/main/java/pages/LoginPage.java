@@ -19,6 +19,10 @@ public class LoginPage extends HomeBar {
 		open(LOGIN_PAGE);
 	}
 
+	public boolean emailFieldIsVisible(){
+		return emailField.isDisplayed();
+	}
+
 	public void LoginWithUser(User user) {
 		emailField.sendKeys(user.getLogin());
 		passwordField.sendKeys(user.getPassword());

@@ -14,7 +14,9 @@ public class PositiveTest extends BaseTest {
         ItemPage itemPage = new ItemPage();
         Assert.assertTrue(itemPage.itemPageIsOpen());
         itemPage.addToCart(validDress);
-        Assert.assertTrue(itemPage.successPopupIsDisplayed());
+        itemPage.checkoutButtonClick();
+        CartPage cartPage = new CartPage();
+        Assert.assertTrue(!cartPage.alertIsDisplayed());
     }
 
     @Test
@@ -27,7 +29,7 @@ public class PositiveTest extends BaseTest {
         itemPage.checkoutButtonClick();
         CartPage cartPage = new CartPage();
         cartPage.deleteItem();
-        cartPage.alertIsDisplayed();
+       // Assert.assertTrue(!cartPage.itemIsDisplayed());
     }
 
     @Test

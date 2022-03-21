@@ -25,7 +25,7 @@ public class DriverService {
         // Set settings for selenide browser
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = CHROME;
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.assertionMode = SOFT;
 
         
@@ -52,13 +52,13 @@ public class DriverService {
         }
     }
 
-    public static void waitForUrlContains(String urlChunk) {
-        WebDriverWait wait = new WebDriverWait(currentDriver(), 20);
-        wait.until(ExpectedConditions.urlContains(urlChunk));
+    public static boolean waitForUrlContains(String urlChunk) {
+        WebDriverWait wait = new WebDriverWait(currentDriver(), 15);
+        return wait.until(ExpectedConditions.urlContains(urlChunk));
     }
 
     public static void waitForUrlDoesNotContain(String urlChunk) {
-        int maxTime = 20;
+        int maxTime = 40;
         while(  currentDriver().getCurrentUrl().contains(urlChunk)  && maxTime > 0) {
             wait(1);
             maxTime--;

@@ -1,7 +1,10 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -28,6 +31,7 @@ public class HomeBar {
     }
 
     public void checkoutButtonClick(){
+        proceedToCheckoutButton.isDisplayed();
         proceedToCheckoutButton.click();
     }
 
@@ -35,6 +39,6 @@ public class HomeBar {
         return addToCartSuccessPopup.isDisplayed();
     }
     public boolean accountLinkIsDisplayed(){
-        return accountLink.isDisplayed();
+        return accountLink.should(Condition.visible, Duration.ofMillis(10000)).isDisplayed();
     }
 }

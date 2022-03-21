@@ -15,7 +15,12 @@ public class CartPage extends HomeBar {
     }
 
     public void deleteItem(){
-        deleteItemButton.scrollTo().click();
+        deleteItemButton.click();
+        alertIsDisplayed();
+    }
+
+    public boolean itemIsDisplayed(){
+        return deleteItemButton.isDisplayed();
     }
 
     public boolean alertIsDisplayed(){

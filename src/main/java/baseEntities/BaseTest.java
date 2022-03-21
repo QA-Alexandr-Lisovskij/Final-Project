@@ -16,8 +16,8 @@ import utils.Randomization;
 
 import java.lang.reflect.Method;
 
-import static com.codeborne.selenide.Selenide.open;
 import static core.DriverService.maximize;
+import static core.DriverService.waitForUrlContains;
 
 
 public class BaseTest {
@@ -27,7 +27,7 @@ public class BaseTest {
     public ItemDress validDress;
 
     @BeforeSuite
-    public void setUpSelenide(){
+    public void setUpConfig(){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
         DriverService.initDriver();
         ApiService.initApi();
@@ -36,10 +36,17 @@ public class BaseTest {
         validDress = ApiService.getDress();
     }
     @BeforeMethod
-    public void setUp(){
-        open("/");
+    public void loginUser() throws InterruptedException {
+        LoginPage loginPage;
+        do{
+            loginPage = new LoginPage();
+            if(waitForUrlContains("account")){
+
+            }else {
+                wait(15);
+            }
+        }while (!loginPage.emailFieldIsVisible());
         maximize();
-        LoginPage loginPage = new LoginPage();
         loginPage.LoginWithUser(validUser);
     }
 

@@ -58,7 +58,7 @@ public class ItemPage extends HomeBar {
         chooseSizeDress(itemDress.getSize());
         chooseColorDress(itemDress.getColor());
         clickToAddButton();
-        itemPageIsOpen();
+        successPopupIsDisplayed();
     }
 
 
