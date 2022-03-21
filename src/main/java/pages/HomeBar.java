@@ -29,8 +29,7 @@ public class HomeBar {
     }
 
     public void checkoutButtonClick(){
-        proceedToCheckoutButton.isDisplayed();
-        proceedToCheckoutButton.click();
+        proceedToCheckoutButton.scrollTo().click();
     }
 
     public boolean successPopupIsDisplayed(){

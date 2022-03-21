@@ -12,7 +12,6 @@ public class PositiveTest extends BaseTest {
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.addDressToCard(validDress);
         ItemPage itemPage = new ItemPage();
-        Assert.assertTrue(itemPage.itemPageIsOpen());
         itemPage.addToCart(validDress);
         itemPage.checkoutButtonClick();
         CartPage cartPage = new CartPage();
@@ -21,11 +20,8 @@ public class PositiveTest extends BaseTest {
 
     @Test
     public void entityDeletingTest(){
-        DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
-        dressesCatalogPage.addDressToCard(validDress);
-        ItemPage itemPage = new ItemPage();
-        Assert.assertTrue(itemPage.itemPageIsOpen());
-        itemPage.addToCart(validDress);
+        ItemPage itemPage = new ItemPage("url");
+        itemPage.clickToAddButton();
         itemPage.checkoutButtonClick();
         CartPage cartPage = new CartPage();
         cartPage.deleteItem();

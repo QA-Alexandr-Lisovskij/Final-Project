@@ -3,8 +3,8 @@
 <suite name="Final Suite">
     <test name="Test Basics 2">
         <classes>
-            <class name="tests.gui.NegativeTest"/>
             <class name="tests.gui.PositiveTest"/>
+            <class name="tests.gui.NegativeTest"/>
             <class name="tests.api.AFEApiTest"/>
             <class name="tests.api.NFEApiTest"/>
         </classes>
