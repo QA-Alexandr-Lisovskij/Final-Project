@@ -17,7 +17,7 @@ public class NegativeTest extends BaseTest {
         HomeBar homeBar = new HomeBar();
         homeBar.searchItem(searchString);
         actualDataSize = homeBar.getValueBySearchField();
-        Assert.assertEquals(actualDataSize.length(),expectedDataSize,"Поле поиска принимает большее количество символов чем необходимо по документации.");
+        Assert.assertEquals(actualDataSize.length(),expectedDataSize,"Поле поиска принимает большее количество символов чем необходимо в требованиях.");
 
     }
 
@@ -27,7 +27,7 @@ public class NegativeTest extends BaseTest {
         homeBar.logoutLinkClick();
         LoginPage loginPage = new LoginPage();
         loginPage.LoginWithUser(invalidUser);
-        Assert.assertTrue(homeBar.accountLinkIsDisplayed(),"Не верные данные пользователя.");
+        Assert.assertTrue(homeBar.accountLinkIsDisplayed(),"Данные пользователя не валидны.");
     }
 
     @Test
@@ -35,6 +35,6 @@ public class NegativeTest extends BaseTest {
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.addDressToCard(validDress);
         ItemPage itemPage = new ItemPage();
-        Assert.assertEquals(itemPage.getValueBySizeOption(),validDress.getSize(),"Актуальный параметр размера платья не соответствует ожидаемому.");
+        Assert.assertEquals(itemPage.getValueBySizeOption(),validDress.getSize(),"Актуальный параметр обьекта не соответствует ожидаемому.");
     }
 }

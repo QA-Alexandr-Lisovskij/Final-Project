@@ -25,7 +25,6 @@ public class DriverService {
         // Set settings for selenide browser
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = CHROME;
-        Configuration.browserVersion = "99.0";
         Configuration.headless = true;
         Configuration.assertionMode = SOFT;
 
