@@ -4,7 +4,7 @@ import baseEntities.BaseApiTest;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
-import static constant.EndPointsApi.*;
+import static constant.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
 public class AFEApiTest extends BaseApiTest {

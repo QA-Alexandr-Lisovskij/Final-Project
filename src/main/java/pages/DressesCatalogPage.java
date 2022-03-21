@@ -2,16 +2,11 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import core.DriverService;
-import dbEntries.DressesTable;
 import model.ItemDress;
 import org.openqa.selenium.By;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
-import static constant.EndPointsUrl.DRESSES_PAGE;
+import static constant.EndPoints.DRESSES_PAGE;
 
 public class DressesCatalogPage extends HomeBar {
 
@@ -36,27 +31,6 @@ public class DressesCatalogPage extends HomeBar {
 
     public DressesCatalogPage() {
         open(DRESSES_PAGE);
-    }
-
-    public ItemDress getItemDress() {
-        setUpConnectionDB();
-        DressesTable dressesTable = new DressesTable(dataBaseService);
-        ResultSet resultSet = dressesTable.getDressByID(1);
-
-        try {
-            while (resultSet.next()) {
-                return ItemDress.builder()
-                        .type(resultSet.getString("type"))
-                        .size(resultSet.getString("size"))
-                        .color(resultSet.getString("color"))
-                        .build();
-
-            }
-        } catch (SQLException e) {
-            logger.error(e.toString());
-        }
-        closeConnectionDB();
-        return null;
     }
 
     public void checkDressType(String type){

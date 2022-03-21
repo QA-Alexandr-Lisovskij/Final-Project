@@ -23,11 +23,9 @@ public class BaseTest {
     public User invalidUser;
     public ItemDress validDress;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUpSelenide(){
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-                .screenshots(true)
-                .savePageSource(false));
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true));
         DriverService.initDriver();
         ApiService.initApi();
         validUser = ApiService.getValidUser();

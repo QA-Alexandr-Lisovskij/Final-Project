@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
-import static constant.EndPointsUrl.CART_PAGE;
+import static constant.EndPoints.CART_PAGE;
 
 public class CartPage extends HomeBar {
     private final SelenideElement deleteItemButton = $(By.className("icon-trash"));
@@ -18,7 +18,7 @@ public class CartPage extends HomeBar {
         deleteItemButton.scrollTo().click();
     }
 
-    public void alertIsDisplayed(){
-        cartIsEmptyAlert.isDisplayed();
+    public boolean alertIsDisplayed(){
+       return cartIsEmptyAlert.isDisplayed();
     }
 }

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import utils.Randomization;
 
 
-import static constant.EndPointsApi.*;
+import static constant.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
 public class NFEApiTest extends BaseApiTest {

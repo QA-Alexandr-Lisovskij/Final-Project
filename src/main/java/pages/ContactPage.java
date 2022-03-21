@@ -4,7 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
-import static constant.EndPointsUrl.CONTACT_PAGE;
+import static constant.EndPoints.CONTACT_PAGE;
 
 public class ContactPage extends HomeBar {
 

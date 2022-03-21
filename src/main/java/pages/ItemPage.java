@@ -5,7 +5,7 @@ import model.ItemDress;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
-import static constant.EndPointsUrl.ITEM_PAGE;
+import static constant.EndPoints.ITEM_PAGE;
 
 public class ItemPage extends HomeBar {
 
@@ -58,6 +58,7 @@ public class ItemPage extends HomeBar {
         chooseSizeDress(itemDress.getSize());
         chooseColorDress(itemDress.getColor());
         clickToAddButton();
+        itemPageIsOpen();
     }
 
 
