@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Final Suite">
-    <test name="Test Basics 2">
+    <test name="Regression Tests" parallel = "tests" >
         <classes>
             <class name="tests.gui.PositiveTest"/>
             <class name="tests.gui.NegativeTest"/>

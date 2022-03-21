@@ -1,6 +1,7 @@
 package tests.api;
 
 import baseEntities.BaseApiTest;
+import baseEntities.BaseTest;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
@@ -8,9 +9,9 @@ import static constant.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
 public class AFEApiTest extends BaseApiTest {
-    int id = 8;
-    @Test
-    public void getUserByInvalidId(){
+
+    @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)
+    public void getUserByInvalidId(int id){
         given()
                 .pathParam("id",id)
                 .when()
@@ -21,8 +22,8 @@ public class AFEApiTest extends BaseApiTest {
 
     }
 
-    @Test
-    public void getDressByInvalidId(){
+    @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)
+    public void getDressByInvalidId(int id){
         given()
                 .pathParam("id",id)
                 .when()

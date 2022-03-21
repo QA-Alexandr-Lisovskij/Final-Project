@@ -65,6 +65,11 @@ public class BaseTest {
                 return new Object[][] {{Randomization.randomString(1),1}, {Randomization.randomString(30),30}};
             case "dataOverageTest":
                 return new Object[][] {{Randomization.randomString(31),30}};
+            case "getUserByInvalidId":
+            case "getDressByInvalidId":
+                return new Object[][] {{4}};
+            case "getUserById":
+                return new Object[][] {{1}};
         }
         return null;
 

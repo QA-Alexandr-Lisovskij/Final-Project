@@ -1,6 +1,7 @@
 package tests.api;
 
 import baseEntities.BaseApiTest;
+import baseEntities.BaseTest;
 import com.google.gson.Gson;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
@@ -16,9 +17,8 @@ import static io.restassured.RestAssured.given;
 
 public class NFEApiTest extends BaseApiTest {
 
-    @Test
-    public void getUserById() {
-        int userID = 1;
+    @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)
+    public void getUserById(int userId) {
         Gson gson = new Gson();
 
         User expectedUser = User.builder()
@@ -28,7 +28,7 @@ public class NFEApiTest extends BaseApiTest {
                 .build();
 
         Response response = given()
-                .pathParam("id",userID)
+                .pathParam("id",userId)
                 .get(GET_USER);
         User actualUser = gson.fromJson(response.getBody().asString(), User.class);
         Assert.assertEquals(actualUser, expectedUser);
