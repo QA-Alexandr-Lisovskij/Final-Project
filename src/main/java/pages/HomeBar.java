@@ -33,7 +33,7 @@ public class HomeBar {
     }
 
     public boolean successPopupIsDisplayed(){
-        return addToCartSuccessPopup.isDisplayed();
+        return addToCartSuccessPopup.scrollTo().isDisplayed();
     }
     public boolean accountLinkIsDisplayed(){
         return accountLink.isDisplayed();

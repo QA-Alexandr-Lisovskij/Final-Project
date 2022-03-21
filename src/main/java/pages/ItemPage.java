@@ -52,6 +52,7 @@ public class ItemPage extends HomeBar {
 
     public void clickToAddButton(){
         addToCartButton.scrollTo().click();
+        successPopupIsDisplayed();
     }
 
     public void addToCart(ItemDress itemDress){

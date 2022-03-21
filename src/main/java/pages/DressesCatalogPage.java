@@ -104,7 +104,9 @@ public class DressesCatalogPage extends HomeBar {
 
     public void clickForItem(){
         itemImage.scrollTo().click();
+        itemForm.scrollTo().isDisplayed();
     }
+
     public void clickMoreButtonForItem(){
         itemImage.hover();
         itemMoreButton.click();

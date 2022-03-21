@@ -16,8 +16,6 @@ import static io.restassured.RestAssured.given;
 
 public class NFEApiTest extends BaseApiTest {
 
-
-
     @Test
     public void getUserById() {
         int userID = 1;

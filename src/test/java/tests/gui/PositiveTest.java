@@ -25,28 +25,28 @@ public class PositiveTest extends BaseTest {
         itemPage.checkoutButtonClick();
         CartPage cartPage = new CartPage();
         cartPage.deleteItem();
-       // Assert.assertTrue(!cartPage.itemIsDisplayed());
+        Assert.assertTrue(!cartPage.itemIsDisplayed());
     }
 
     @Test
     public void uploadFileTest(){
         ContactPage contactPage = new ContactPage();
         contactPage.sendMail();
-        contactPage.successAlertIsVisible();
+        Assert.assertTrue(contactPage.successAlertIsVisible());
     }
 
     @Test
     public void dialogBoxTest() {
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.clickForItem();
-        dressesCatalogPage.itemFormIsDisplayed();
+        Assert.assertTrue(dressesCatalogPage.itemFormIsDisplayed());
     }
 
     @Test
     public void popUpTest(){
         ItemPage itemPage = new ItemPage("url");
         itemPage.clickToAddButton();
-        itemPage.successPopupIsDisplayed();
+        Assert.assertTrue(itemPage.successPopupIsDisplayed());
     }
 
     @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)

@@ -28,6 +28,7 @@ public class ContactPage extends HomeBar {
         inputForLoadFile.setValue("D:/ot_gvozd_do_sandala.pdf");
         messageField.sendKeys("My message");
         sendButton.scrollTo().click();
+        successAlert.scrollTo().isDisplayed();
     }
 
     public boolean successAlertIsVisible(){
