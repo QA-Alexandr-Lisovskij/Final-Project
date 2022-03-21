@@ -1,12 +1,10 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import java.time.Duration;
-
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 public class HomeBar {
     private final SelenideElement addToCartSuccessPopup = $(By.className("icon-ok"));
@@ -39,6 +37,6 @@ public class HomeBar {
         return addToCartSuccessPopup.isDisplayed();
     }
     public boolean accountLinkIsDisplayed(){
-        return accountLink.should(Condition.visible, Duration.ofMillis(10000)).isDisplayed();
+        return accountLink.isDisplayed();
     }
 }
